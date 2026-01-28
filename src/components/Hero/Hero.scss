@@ -1,0 +1,463 @@
+$bg-main: radial-gradient(
+  circle at center,
+  #1a2435 0%,
+  #0b1220 60%,
+  #05070d 100%
+);
+
+$white: #ffffff;
+$blue-light: #5a77aa;
+$blue-dark: #2c4062;
+
+.hero {
+  min-height: 100vh;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  //background: $bg-main;
+  background-image: 
+    linear-gradient(
+      rgba(0, 0, 0, 0.63),
+      rgba(0, 0, 0, 0.66)
+    ),
+    url("../../assets/mountainBg.jpg");
+
+  background-size: cover;
+  background-position: center;
+  align-items: center;
+  overflow-y: hidden;
+
+  h1 {
+    font-size: clamp(2.4rem, 6vw, 4.2rem);
+    line-height: 1.1;
+    color: $white;
+    margin-bottom: 0.95rem;
+  }
+}
+
+.hero-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-self: center;
+  padding: 1.25rem;
+  max-width: 38.75rem;
+  color: $white;
+  margin-left: 10%;
+
+  h2 {
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    font-weight: 500;
+    color: $blue-light;
+    margin-left: 0.3rem;
+    margin-bottom: 0.95rem;
+  }
+
+  p {
+    font-size: clamp(1rem, 2.5vw, 1.3rem);
+    font-weight: 100;
+    margin-left: 0.45rem;
+    background: linear-gradient(120deg, #baceef, $white, $blue-light);
+    background-size: 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientMove 4s infinite linear;
+  }
+}
+
+.cursor {
+  display: inline-block;
+  width: 2px;
+  background: $white;
+  margin-left: 2px;
+  animation: blink 0.7s infinite;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 1rem;
+  margin-left: 0.3rem;
+  animation: fadeIn 4s ease forwards;
+}
+
+.btn {
+  padding: 1rem 3.1rem;
+  font-size: 1.2rem;
+  border-radius: 0.75rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  margin-top: 1.9rem;
+  cursor: pointer;
+
+  &.primary {
+    background: $blue-dark;
+    color: $white;
+
+    &:hover {
+      transform: translateY(-2px);
+      background-color: $white;
+      color: $blue-dark;
+    }
+  }
+
+  &.secondary {
+    border: 1px solid $blue-light;
+    color: $white;
+
+    &:hover {
+      transform: translateY(-2px);
+      background-color: $white;
+      color: $blue-dark;
+    }
+  }
+}
+
+.hero-image {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 15%;
+    left: 55%;
+    transform: translateX(-50%);
+    width: 110%;
+    height: 65%;
+    filter: blur(90px);
+    z-index: -1;
+  }
+
+  #hero-img {
+    position: absolute;
+    width: 1000px;
+    height: auto;
+    bottom: 0;
+    right: clamp(-10%, 10vw, 10%);
+    filter: drop-shadow(0 0 10px rgba(90, 119, 170, 0.85)) grayscale(100%)
+      sepia(30%) contrast(110%);
+  }
+}
+
+@keyframes blink {
+  0%,
+  50% {
+    opacity: 1;
+  }
+  51%,
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes gradientMove {
+  0% {
+    background-position: 0%;
+  }
+  100% {
+    background-position: 200%;
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(300px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeRight {
+  from {
+    opacity: 0;
+    transform: translateX(400px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.4;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+[data-animate="fadeUp"] {
+  opacity: 0;
+  transform: translateX(-40px);
+
+  &.active {
+    animation: fadeUp 4s ease forwards;
+  }
+}
+
+[data-animate="fadeLeft"] {
+  opacity: 0;
+  transform: translateX(-100px);
+
+  &.active {
+    animation: fadeLeft 2.5s ease forwards;
+  }
+}
+
+[data-animate="fadeRight"] {
+  opacity: 0;
+  transform: translateX(-100px);
+
+  &.active {
+    animation: fadeRight 3s ease forwards;
+  }
+}
+
+[data-animate="FadeIn"],
+[data-animate="FadeImg"] {
+  opacity: 0;
+
+  &.active {
+    animation: fadeIn 5s ease forwards;
+  }
+}
+
+@media (min-width: 1300px) and (max-width: 1500px) {
+  #hero-img {
+    right: 0% !important;
+  }
+
+  .hero-text {
+    max-width: clamp(20rem, 45vw, 35rem);
+  }
+
+  .hero h1 {
+    font-size: clamp(2.2rem, 4.5vw, 3rem);
+  }
+
+  .hero-text h2 {
+    font-size: clamp(1.4rem, 3.5vw, 1.7rem);
+  }
+
+  .hero-text p {
+    font-size: clamp(0.95rem, 2.2vw, 1.1rem);
+  }
+}
+
+@media (min-width: 1100px) and (max-width: 1299px) {
+  #hero-img {
+    width: 900px !important;
+    right: -25% !important;
+  }
+
+  .hero-text {
+    max-width: clamp(20rem, 45vw, 35rem);
+  }
+
+  .hero h1 {
+    font-size: clamp(2.2rem, 4.5vw, 3rem);
+  }
+
+  .hero-text h2 {
+    font-size: clamp(1.4rem, 3.5vw, 1.7rem);
+  }
+
+  .hero-text p {
+    font-size: clamp(0.95rem, 2.2vw, 1.1rem);
+  }
+}
+
+@media (min-width: 900px) and (max-width: 1099px) {
+  #hero-img {
+    width: 800px !important;
+    right: -25% !important;
+  }
+
+  .hero-text {
+    max-width: clamp(18rem, 40vw, 32rem);
+  }
+
+  .hero h1 {
+    font-size: clamp(2.1rem, 4.1vw, 2.6rem);
+  }
+
+  .hero-text h2 {
+    font-size: clamp(1.4rem, 3.2vw, 1.6rem);
+  }
+
+  .hero-text p {
+    font-size: clamp(1rem, 2vw, 1.1rem);
+  }
+
+  .hero-buttons .btn {
+    width: 200px;
+    font-size: 1rem;
+    padding: 0.7rem 2rem;
+    text-align: center;
+  }
+}
+
+@media (min-width: 600px) and (max-width: 899px) {
+  .hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+
+  .hero-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    position: absolute;
+  }
+
+  .hero-text p {
+    text-align: center;
+    font-size: clamp(1.25rem, 2vw, 1.1rem);
+  }
+
+  #hero-img {
+    display: none;
+  }
+}
+
+@media (min-width: 300px) and (max-width: 599px) {
+  .hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+
+  .hero-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    position: absolute;
+  }
+
+  .hero h1 {
+    font-size: clamp(2rem, 4.1vw, 2.6rem);
+  }
+
+  .hero-text p {
+    text-align: center;
+    font-size: clamp(1.15rem, 2vw, 1.1rem);
+  }
+
+  #hero-img {
+    display: none;
+  }
+
+  .hero-buttons .btn {
+    width: 150px;
+    font-size: 1rem;
+    padding: 0.7rem 2rem;
+    text-align: center;
+  }
+}
+
+/*@media (max-width: 1024px) {
+  .hero {
+    transform: translateY(-20%);
+  }
+
+  .hero-text {
+    margin-top: 20%;
+    width: 60%;
+  }
+
+  .hero h1 {
+    font-size: clamp(2rem, 4vw, 2.6rem);
+  }
+
+  .hero-text h2 {
+    font-size: clamp(1.2rem, 3.2vw, 1.6rem);
+  }
+
+  .hero-text p {
+    font-size: clamp(0.95rem, 2.2vw, 1.1rem);
+  }
+
+  .hero-buttons {
+    justify-content: center;
+  }
+
+  .hero-buttons .btn {
+    padding: clamp(0.7rem, 2.5vw, 1rem);
+    font-size: clamp(0.9rem, 2vw, 1.1rem);
+    width: clamp(160px, 35vw, 220px);
+    text-align: center;
+  }
+
+  .hero-image {
+    position: relative;
+    left: auto;
+    bottom: auto;
+    transform: none;
+    height: auto;
+    margin-top: 3rem;
+  }
+
+  #hero-img { 
+    width: clamp(520px, 80vw, 1180px) !important;
+    transform: translateX(-30%) translateY(0%) !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    padding: 5rem 1.5rem;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  .hero-image {
+    display: none;
+  }
+}
+*/

@@ -1,0 +1,146 @@
+.projects {
+  position: relative;
+  width: 100%;
+  padding-left: 7%;
+  padding-right: 7%;
+  min-height: 100vh;
+  column-gap: 3rem;
+  padding-block: min(20vh, 3rem);
+
+  @media screen and (min-width: 48rem) {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.projects-content {
+  span {
+    text-transform: uppercase;
+    letter-spacing: 0.094rem;
+    font-size: 1.2rem;
+  }
+
+  h1 {
+    text-transform: capitalize;
+    letter-spacing: 0.05rem;
+    font-size: 4rem;
+    line-height: 1.1;
+    background-color: #5a77aa;
+    background-image: linear-gradient(45deg, #5a77aa, #000);
+    background-size: 100%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  hr {
+    display: block;
+    background: #5a77aa;
+    height: 0.25rem;
+    width: 6.25rem;
+    border: none;
+    margin: 1.125rem 0 1.875rem 0;
+  }
+
+  p {
+    line-height: 1.6;
+    font-size: 1.3rem;
+    max-width: 31.25rem;
+  }
+}
+
+.projects {
+
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+}
+
+.projects-content {
+  width: 40%;
+}
+
+.projects-content h1::after {
+  content: attr(data-title);
+}
+
+.projects-content p::after {
+  content: attr(data-tech);
+}
+
+
+.side-title::after {
+  content: attr(data-title);
+}
+
+.side-tech::after {
+  content: attr(data-tech);
+}
+
+.slider-btn {
+  display: inline-block;
+  color: #fff;
+  background: #2c4062;
+  padding: 0.95rem 2.5rem;
+  border-radius: 0.75rem;
+  font-weight: 600;
+  font-size: 1.2rem;
+  text-decoration: none;
+  transition: 0.3s ease;
+  margin-top: 1.875rem;
+
+  &:hover {
+    transform: translateY(-0.25rem);
+  }
+}
+
+.myswiper {
+  width: 70%;
+  padding-top: 3.125rem;
+}
+
+.myswiper-slider {
+  width: 18.75rem;
+  height: 28.125rem;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.slide-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.426);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.swiper-slide-active .slide-overlay {
+  opacity: 1;
+}
+
+.swiper-pagination-bullet,
+.swiper-pagination-bullet-active {
+  background: #fff;
+}
+
+[data-animate="fadeLeft"] {
+  opacity: 0;
+  transform: translateX(-6.25rem);
+
+  &.active {
+    animation: fadeLeft 2.5s ease forwards;
+  }
+}
+
+@keyframes fadeLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-2.5rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+

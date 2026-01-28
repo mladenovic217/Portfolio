@@ -1,0 +1,86 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family:
+    "Inter",
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    sans-serif;
+  color: #1e1e1f;
+  line-height: 1.6;
+}
+
+.scroll-progress {
+  position: fixed;
+  right: 1.25rem;
+  top: 55%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 0.375rem;
+  z-index: 999;
+  &__item {
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 999px;
+    background: rgba(0, 0, 0, 0.2);
+    transition:
+      background 0.4s ease,
+      width 0.2s ease,
+      height 0.4s ease;
+    &.active {
+      width: 0.625rem;
+      height: 0.625rem;
+      background: #2c4062;
+    }
+  }
+}
+
+.hero-active {
+  .scroll-progress__item {
+    background: #6f6f6fe3;
+
+    &.active {
+      background: #ffffff;
+      width: 0.625rem;
+      height: 0.625rem;
+    }
+  }
+}
+
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+[data-animate] {
+  opacity: 0;
+
+  &.active {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 899px) {
+  .scroll-progress {
+    display: none;
+  }
+}
