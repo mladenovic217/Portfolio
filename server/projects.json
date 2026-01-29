@@ -1,0 +1,46 @@
+{
+  "projects": [
+    {
+      "id": 1,
+      "title": "Ohmleta.si Website",
+      "image": "/assets/Ohmleta.PNG",
+      "tech": "A simple yet elegant JS/HTML/CSS project that demonstrates responsive layout and client-side logic."
+    },
+    {
+      "id": 2,
+      "title": "Aurelia Website",
+      "image": "/assets/Aurelia.PNG",
+      "tech": "A simple yet elegant JS/HTML/CSS project that demonstrates responsive layout and client-side logic."
+    },
+    {
+      "id": 3,
+      "title": "Investment Calculator",
+      "image": "/assets/InvestmentCalculator.PNG",
+      "tech": "A simple yet elegant JS/HTML/CSS project that demonstrates responsive layout and client-side logic."
+    },
+    {
+      "id": 4,
+      "title": "Weather App",
+      "image": "/assets/Weather.PNG",
+      "tech": "A simple yet elegant JS/HTML/CSS project that demonstrates responsive layout and client-side logic."
+    },
+    {
+      "id": 5,
+      "title": "Ohmleta.si Website",
+      "image": "/assets/TheOhmleta.PNG",
+      "tech": "A simple yet elegant JS/HTML/CSS project that demonstrates responsive layout and client-side logic."
+    },
+    {
+      "id": 6,
+      "title": "Aurelia Website",
+      "image": "/assets/Aurelia.PNG",
+      "tech": "A simple yet elegant JS/HTML/CSS project that demonstrates responsive layout and client-side logic."
+    },
+    {
+      "id": 7,
+      "title": "Investment Calculator",
+      "image": "/assets/InvestmentCalculator.PNG",
+      "tech": "A simple yet elegant JS/HTML/CSS project that demonstrates responsive layout and client-side logic."
+    }
+  ]
+}

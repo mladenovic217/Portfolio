@@ -1,6 +1,7 @@
 $white: #ffffff;
-$blue-light: #5a77aa;
+$blue-light: #6a85b3;
 $blue-dark: #2c4062;
+$font-main: 1rem;
 
 .contact {
   width: 100%;
@@ -21,7 +22,7 @@ $blue-dark: #2c4062;
   justify-content: center;
 
   h1 {
-    font-size: clamp(2.5rem, 4vw, 4rem);
+    font-size: 4rem;
     font-weight: 700;
     text-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
     color: $white;
@@ -34,7 +35,6 @@ $blue-dark: #2c4062;
   width: 100%;
   height: 60vh;
   background-color: #fff;
-  
 }
 
 .contact-left {
@@ -50,7 +50,6 @@ $blue-dark: #2c4062;
   span {
     color: $blue-light;
     text-decoration: underline;
-    
   }
 
   p {
@@ -59,8 +58,18 @@ $blue-dark: #2c4062;
     line-height: 1.6;
   }
 
-  p strong{
+  p strong {
     color: $blue-dark;
+    font-weight: 500;
+  }
+
+  #contact-span {
+    display: inline-block;
+
+    a {
+      color: $blue-light;
+      text-decoration: none;
+    }
   }
 
   .contact-socials {
@@ -74,8 +83,8 @@ $blue-dark: #2c4062;
       height: auto;
       border-radius: 15px;
     }
-    #gh{
-        margin-left: 2rem;
+    #gh {
+      margin-left: 2rem;
     }
   }
 }
@@ -134,20 +143,6 @@ $blue-dark: #2c4062;
   }
 }
 
-@media (max-width: 1024px) {
-  .contact-bottom {
-    flex-direction: column;
-    height: auto;
-  }
-
-  .contact-left,
-  .contact-right {
-    width: 100%;
-    padding: 2rem;
-  }
-}
-
-
 [data-animate="fadeLeft"] {
   opacity: 0;
   transform: translateX(-2.5rem);
@@ -205,5 +200,229 @@ $blue-dark: #2c4062;
   to {
     opacity: 1;
     transform: translateX(0);
+  }
+}
+
+@media (max-width: 1440px) {
+  .contact-bottom {
+    justify-content: space-between;
+    padding: 0rem clamp(1rem, 4.5%, 5rem);
+  }
+
+  .contact-left {
+    width: 60%;
+    h2 {
+      font-size: 2.3rem;
+    }
+
+    p {
+      font-size: 1.1rem;
+    }
+
+    .contact-socials {
+      img {
+        width: 4rem;
+      }
+    }
+  }
+
+  .contact-right {
+    h2 {
+      font-size: 2.3rem;
+    }
+
+    .contact-form {
+      gap: 1.3rem;
+
+      input,
+      textarea {
+        font-size: 1rem;
+      }
+      textarea {
+        min-height: 130px;
+      }
+
+      button {
+        padding: 0.8rem 3rem;
+        font-size: 1.1rem;
+      }
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .contact-top {
+    height: 35vh;
+    h1 {
+      font-size: 3.3rem;
+    }
+  }
+
+  .contact-bottom {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .contact-left,
+  .contact-right {
+    width: 100%;
+    padding: 2rem;
+    h2 {
+      font-size: 2.3rem;
+    }
+  }
+
+  .contact-left {
+    position: relative;
+
+    p {
+      font-size: 1.2rem;
+    }
+    .contact-socials {
+      position: absolute;
+      top: 56%;
+      left: 430px;
+
+      img {
+        width: 2.3rem;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .contact-top {
+    height: 35vh;
+    h1 {
+      font-size: 3rem;
+    }
+  }
+  .contact-bottom {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .contact-left,
+  .contact-right {
+    width: 100%;
+    padding: 2rem;
+    h2 {
+      font-size: 2.5rem;
+    }
+  }
+
+  .contact-left {
+    position: relative;
+
+    p {
+      font-size: 1.1rem;
+    }
+    .contact-socials {
+      position: absolute;
+      top: 56%;
+      left: 390px;
+
+      img {
+        width: 2.3rem;
+      }
+    }
+  }
+}
+
+@media (max-width: 540px) {
+  .contact-top {
+    height: 35vh;
+    h1 {
+      font-size: 2.7rem;
+    }
+  }
+  .contact-bottom {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .contact-left,
+  .contact-right {
+    width: 100%;
+    padding: 2rem;
+    h2 {
+      font-size: 2.2rem;
+    }
+  }
+
+  .contact-left {
+    position: relative;
+
+    p {
+      font-size: 1rem;
+    }
+    .contact-socials {
+      position: absolute;
+      top: 70%;
+      left: 35px;
+
+      img {
+        width: 2rem;
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-top {
+    height: 30vh;
+
+    h1 {
+      text-align: center;
+      font-size: 2.2rem;
+    }
+  }
+
+  .contact-bottom {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .contact-left,
+  .contact-right {
+    width: 100%;
+    padding: 2rem;
+    h2 {
+      font-size: 1.7rem;
+    }
+  }
+
+  .contact-right {
+    margin-top: 50px;
+  }
+
+  .contact-left {
+    position: relative;
+
+    p {
+      display: flex;
+      flex-direction: column;
+      font-size: 1rem;
+
+      strong {
+        font-size: 1.1rem;
+      }
+    }
+
+    .contact-socials {
+      position: absolute;
+      top: 78%;
+      left: 35px;
+
+      img {
+        width: 2rem;
+      }
+    }
+  }
+}
+
+@media (min-width: 1600px) {
+  .contact-bottom {
+    gap: 5rem;
   }
 }

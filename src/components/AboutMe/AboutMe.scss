@@ -1,5 +1,5 @@
 $white: #ffffff;
-$blue-light: #5a77aa;
+$blue-light: #6a85b3;
 $blue-dark: #2c4062;
 
 .about {
@@ -211,13 +211,17 @@ $blue-dark: #2c4062;
     grid-template-columns: repeat(3, 1fr);
     gap: 0.75rem;
 
-    
 
     li {
       position: relative;
       padding-left: 1.75rem;
-      font-size: clamp(0.95rem, 1vw, 1.05rem);
+      font-size: clamp(0.85rem, 1vw, 1.05rem);
       line-height: 1.6;
+
+      @media (max-width:480px) {
+        font-size: 0.8rem;
+        padding-left: 1rem;
+      }
 
       &::before {
         content: "✓";
@@ -226,7 +230,11 @@ $blue-dark: #2c4062;
         top: 0.15rem;
         color: #fff;
         font-weight: 700;
-        font-size: 1.1rem;
+        font-size: 1rem;
+
+        @media (max-width:480px) {
+        font-size: 0.7rem;
+      }
       }
     }
   }

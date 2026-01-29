@@ -23,7 +23,7 @@ body {
 
 .scroll-progress {
   position: fixed;
-  right: 1.25rem;
+  left: 1.25rem;
   top: 55%;
   transform: translateY(-50%);
   display: flex;
@@ -79,7 +79,7 @@ body {
   }
 }
 
-@media (max-width: 899px) {
+@media (max-width: 1024px) {
   .scroll-progress {
     display: none;
   }

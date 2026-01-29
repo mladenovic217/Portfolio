@@ -1,5 +1,5 @@
 import React from "react";
-import meImg from "../../assets/Me-removebg-preview.png";
+import meImg from "/assets/Me-removebg-preview.png";
 import "./Hero.scss";
 import useTypewriter from "../../hooks/useTypewriter";
 
@@ -20,7 +20,7 @@ export default function Hero() {
         </p>
 
         <div className="hero-buttons">
-          <a className="btn primary" data-animate="FadeIn">
+          <a className="btn primary" data-animate="FadeIn" href="#contact">
             Contact Me
           </a>
           <a className="btn secondary" data-animate="FadeIn" href="#projects">

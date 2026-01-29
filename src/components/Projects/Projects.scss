@@ -6,11 +6,6 @@
   min-height: 100vh;
   column-gap: 3rem;
   padding-block: min(20vh, 3rem);
-
-  @media screen and (min-width: 48rem) {
-    display: flex;
-    align-items: center;
-  }
 }
 
 .projects-content {
@@ -25,8 +20,8 @@
     letter-spacing: 0.05rem;
     font-size: 4rem;
     line-height: 1.1;
-    background-color: #5a77aa;
-    background-image: linear-gradient(45deg, #5a77aa, #000);
+    background-color: #6a85b3;
+    background-image: linear-gradient(45deg, #6a85b3, #000);
     background-size: 100%;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -34,7 +29,7 @@
 
   hr {
     display: block;
-    background: #5a77aa;
+    background: #6a85b3;
     height: 0.25rem;
     width: 6.25rem;
     border: none;
@@ -49,14 +44,13 @@
 }
 
 .projects {
-
   display: flex;
   align-items: center;
   gap: 3rem;
 }
 
 .projects-content {
-  width: 40%;
+  width: 45%;
 }
 
 .projects-content h1::after {
@@ -67,6 +61,13 @@
   content: attr(data-tech);
 }
 
+.side-title {
+  max-width: 24rem;
+}
+
+.side-title {
+  min-height: 5.5rem;
+}
 
 .side-title::after {
   content: attr(data-title);
@@ -106,13 +107,13 @@
   position: relative;
 }
 
-.slide-overlay {
+/*.slide-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.426);
+  background: rgba(0, 0, 0, 0.15);
   opacity: 0;
   transition: opacity 0.4s ease;
-}
+}*/
 
 .swiper-slide-active .slide-overlay {
   opacity: 1;
@@ -143,4 +144,151 @@
   }
 }
 
+@media screen and (max-width: 1440px) {
+  .projects-content {
+    h1 {
+      font-size: 3.5rem;
+    }
 
+    p {
+      font-size: 1.2rem;
+    }
+
+    .slider-btn {
+      font-size: 1.1rem;
+    }
+  }
+
+  .myswiper {
+    width: 80%;
+    padding-top: 1rem;
+  }
+
+  .myswiper-slider {
+    height: 26rem;
+    
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .projects {
+    flex-direction: column;
+    padding-top: 5rem;
+    gap: 2rem;
+  }
+
+  .projects-content {
+    width: 100%;
+    text-align: center;
+
+    span {
+      font-size: 1.2rem;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      min-height: auto;
+      max-width: 100%;
+    }
+
+    hr {
+      margin: 1rem auto;
+    }
+
+    p {
+      font-size: 1.3rem;
+      margin: 0 auto;
+      max-width: 100%;
+    }
+  }
+
+  .myswiper {
+    width: 100%;
+    padding-top: 1rem;
+  }
+
+  .myswiper-slider {
+    width: 15rem;
+    height: 19rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .projects {
+    flex-direction: column;
+    padding-top: 5rem;
+    gap: 2rem;
+  }
+
+  .projects-content {
+    width: 100%;
+    text-align: center;
+
+    span {
+      font-size: 1rem;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      min-height: auto;
+      max-width: 100%;
+    }
+
+    hr {
+      margin: 1rem auto;
+    }
+
+    p {
+      font-size: 1.1rem;
+      margin: 0 auto;
+      max-width: 100%;
+    }
+  }
+
+  .myswiper-slider {
+    width: auto;
+    height: 16rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .projects {
+    flex-direction: column;
+    padding-top: 5rem;
+    gap: 2rem;
+  }
+
+  .projects-content {
+    width: 100%;
+    text-align: center;
+
+    span {
+      font-size: 1rem;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      min-height: auto;
+      max-width: 100%;
+    }
+
+    hr {
+      margin: 1rem auto;
+    }
+
+    p {
+      font-size: 1.1rem;
+      margin: 0 auto;
+      max-width: 100%;
+    }
+
+    .slider-btn {
+      font-size: 1rem;
+    }
+  }
+
+  .myswiper-slider {
+    width: auto;
+    height: 14rem;
+  }
+}

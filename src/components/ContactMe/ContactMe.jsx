@@ -1,6 +1,6 @@
 import "./ContactMe.scss";
 import Swal from "sweetalert2";
-import 'sweetalert2/dist/sweetalert2.min.css';
+import "sweetalert2/dist/sweetalert2.min.css";
 
 export default function ContactMe() {
   const onSubmit = async (event) => {
@@ -26,9 +26,9 @@ export default function ContactMe() {
         title: "Message sent!",
         text: "Thank you for reaching out. I’ll get back to you shortly.",
         icon: "success",
-        confirmButtonColor: "#2c4062"
+        confirmButtonColor: "#2c4062",
       });
-        event.target.reset();
+      event.target.reset();
     }
   };
 
@@ -40,7 +40,7 @@ export default function ContactMe() {
 
       <div className="contact-bottom">
         <div className="contact-left">
-          <h2 data-animate="fadeLeft">Let’s talk</h2>
+          <h2 data-animate="fadeLeft">Reach me</h2>
           <p data-animate="fadeLeft">
             <strong>Email:</strong>
             <span> vmladenovic110@gmail.com</span>{" "}
@@ -54,15 +54,32 @@ export default function ContactMe() {
             <strong>Response time:</strong> 12–24 hours
           </p>
 
-          <p data-animate="fadeLeft">You can also reach me on LinkedIn / GitHub.</p>
+          <p data-animate="fadeLeft">
+            <strong>You can also reach me on:</strong>{" "}
+            <span id="contact-span">
+              <a
+                href="https://www.linkedin.com/in/veljko-mladenovic-1866322a7/"
+                target="_blank"
+              >
+                LinkedIn
+              </a>{" "}
+              /
+              <a href="https://github.com/mladenovic217" target="_blank">
+                GitHub
+              </a>
+            </span>
+          </p>
 
           <div className="contact-socials" data-animate="fadeLeft">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linkedin/linkedin-original.svg" />
-
-            <img
-              id="gh"
-              src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original-wordmark.svg"
-            />
+            <a href="https://www.linkedin.com/in/veljko-mladenovic-1866322a7/">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linkedin/linkedin-original.svg" />
+            </a>
+            <a href="https://github.com/mladenovic217">
+              <img
+                id="gh"
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original-wordmark.svg"
+              />
+            </a>
           </div>
         </div>
 

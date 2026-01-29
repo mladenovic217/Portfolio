@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, EffectCoverflow, Autoplay } from "swiper/modules";
@@ -8,9 +8,23 @@ import "swiper/css/pagination";
 import "swiper/css/effect-coverflow";
 
 import "./Projects.scss";
-import { slider } from "../../data/dataProjects.js";
 
 export default function Projects() {
+  const [projects, setProjects] = useState([]);
+  useEffect(() => {
+    const fetchProjects = async () => {
+      try {
+        const res = await fetch("http://localhost:3000/projects");
+        const data = await res.json();
+        setProjects(data);
+      } catch (err) {
+        console.error(err);
+      }
+    };
+
+    fetchProjects();
+  }, []);
+
   const titleRef = useRef(null);
   const techRef = useRef(null);
 
@@ -22,66 +36,72 @@ export default function Projects() {
   return (
     <section className="projects" id="projects">
       <div className="projects-content">
-        <span>My Projects</span>
+        <span data-animate="fadeLeft">My Projects</span>
 
-        <h1 className="side-title" ref={titleRef}></h1>
+        <h1 data-animate="fadeLeft" className="side-title" ref={titleRef}></h1>
 
-        <hr />
+        <hr data-animate="fadeLeft" />
 
-        <p className="side-tech" ref={techRef}></p>
+        <p data-animate="fadeLeft" className="side-tech" ref={techRef}></p>
 
-        <a href="#" className="slider-btn side-btn">
+        <a data-animate="fadeLeft" href="#" className="slider-btn side-btn">
           Go to GitHub
         </a>
       </div>
 
-      <Swiper
-        className="myswiper"
-        modules={[Pagination, EffectCoverflow, Autoplay]}
-        effect={"coverflow"}
-        grabCursor={true}
-        centeredSlides={true}
-        coverflowEffect={{
-          rotate: 0,
-          stretch: 0,
-          depth: 100,
-          modifier: 3,
-          slideShadows: true,
-        }}
-        loop={true}
-        pagination={{ clickable: true }}
-        slidesPerView={3}
-        autoplay={{
-          delay: 5000,
-          disableOnInteraction: false,
-        }}
-        onInit={(swiper) => {
-          const activeSlide = swiper.slides[swiper.activeIndex];
-          setSideInfo(
-            activeSlide.getAttribute("data-title"),
-            activeSlide.getAttribute("data-tech"),
-          );
-        }}
-        onSlideChange={(swiper) => {
-          const activeSlide = swiper.slides[swiper.activeIndex];
-          setSideInfo(
-            activeSlide.getAttribute("data-title"),
-            activeSlide.getAttribute("data-tech"),
-          );
-        }}
-      >
-        {slider.map((data) => (
-          <SwiperSlide
-            key={data.id}
-            className="myswiper-slider"
-            style={{ backgroundImage: `url(${data.image})` }}
-            data-title={data.title}
-            data-tech={data.tech}
-          >
-            <div className="slide-overlay"></div>
-          </SwiperSlide>
-        ))}
-      </Swiper>
+      {projects.length > 0 && (
+        <Swiper
+          className="myswiper"
+          modules={[Pagination, EffectCoverflow, Autoplay]}
+          effect={"coverflow"}
+          grabCursor={true}
+          centeredSlides={true}
+          coverflowEffect={{
+            rotate: 0,
+            stretch: 0,
+            depth: 100,
+            modifier: 3,
+            slideShadows: true,
+          }}
+          loop={true}
+          pagination={{ clickable: true }}
+          slidesPerView={3}
+          autoplay={{
+            delay: 5000,
+            disableOnInteraction: false,
+          }}
+          onInit={(swiper) => {
+            const project = projects[swiper.realIndex];
+            if (!project) return;
+            setSideInfo(project.title, project.tech);
+          }}
+          onSlideChange={(swiper) => {
+            const project = projects[swiper.realIndex];
+            if (!project) return;
+            setSideInfo(project.title, project.tech);
+          }}
+          breakpoints={{
+            0: { slidesPerView: 1 },
+            768: { slidesPerView: 2 },
+
+            1600: { slidesPerView: 3 },
+          }}
+        >
+          {projects.map((data) => (
+            <SwiperSlide
+              key={data.id}
+              className="myswiper-slider"
+              style={{
+                backgroundImage: `url(${data.image})`,
+              }}
+              data-title={data.title}
+              data-tech={data.tech}
+            >
+              <div className="slide-overlay"></div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      )}
     </section>
   );
 }
