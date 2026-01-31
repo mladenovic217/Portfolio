@@ -1,3 +1,5 @@
+//Making fake API server
+
 const jsonServer = require('json-server'); 
 const clone = require('clone'); //making deep copy 
 const data = require('./projects.json');

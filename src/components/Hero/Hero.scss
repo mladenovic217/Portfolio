@@ -6,7 +6,7 @@ $bg-main: radial-gradient(
 );
 
 $white: #ffffff;
-$blue-light: #6a85b3;
+$blue-light: #7690bd;
 $blue-dark: #2c4062;
 
 .hero {
@@ -20,7 +20,7 @@ $blue-dark: #2c4062;
       rgba(0, 0, 0, 0.63),
       rgba(0, 0, 0, 0.66)
     ),
-    url("../../assets/heroBg.jpg");
+    url("../../assets/43541.jpg");
 
   background-size: cover;
   background-position: center;
@@ -113,32 +113,110 @@ $blue-dark: #2c4062;
   }
 }
 
-.hero-image {
+.graph {
+  flex: 1;
   position: relative;
-  height: 100vh;
-  width: 100%;
-  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  
 
-  &::after {
-    content: "";
-    position: absolute;
-    top: 15%;
-    left: 55%;
-    transform: translateX(-50%);
-    width: 110%;
-    height: 65%;
-    filter: blur(90px);
-    z-index: -1;
+  .graph-container {
+    width: 100%;
+    max-width: clamp(300px, 30vw, 500px);
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
   }
 
-  #hero-img {
-    position: absolute;
-    width: 1000px;
-    height: auto;
-    bottom: 0;
-    right: clamp(-10%, 10vw, 10%);
-    filter: drop-shadow(0 0 10px rgba(90, 119, 170, 0.85)) grayscale(100%)
-      sepia(30%) contrast(110%);
+  .column-graph{
+    height: 150px; 
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+    margin-bottom: 20px;
+    border-left: 2px solid $blue-light;
+    padding-left: 20px;
+
+    &.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .column-graph-text {
+      h3 {
+        color: $white;
+        margin-bottom: 10px;
+        font-size: 1.5rem;
+      }
+      ul {
+        list-style: none;
+        display: grid;
+        grid-template-columns: 1fr 1fr; 
+        gap: 8px;
+        
+        li {
+          color: $blue-light;
+          font-size: 1.1rem;
+          &:before { content: "▹ "; color: $white; }
+        }
+      }
+    }
+  }
+
+  .graph-info {
+    display: flex;
+    align-items: flex-end;
+    gap: clamp(8px, 1.5vw, 15px);
+    height: 400px;
+
+    .graph-bar {
+      flex: 1;
+      background: rgba($blue-dark, 0.3);
+      border: 1px solid rgba($blue-light, 0.2);
+      border-radius: 4px;
+      position: relative;
+      transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+      cursor: pointer;
+      overflow: hidden;
+
+      &.bar-low { height: 40%; }
+      &.bar-med { height: 65%; }
+      &.bar-high { height: 90%; }
+
+      
+      &.active, &:hover {
+        background: linear-gradient(180deg, $blue-light, $blue-dark);
+        box-shadow: 0 0 30px rgba($blue-light, 0.2);
+        height: 100% !important;
+
+        .bar-label {
+          color: $white;
+          bottom: 15px;
+        }
+      }
+
+      .bar-label {
+        position: absolute;
+        bottom: 10px;
+        left: 0%;
+        transform: translateX(-50%);
+        writing-mode: vertical-rl;
+        rotate: 180deg;
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: $blue-light;
+        transition: all 0.3s ease;
+      }
+    }
+  }
+}
+
+@media (max-width: 899px) {
+  .graph {
+    display: none;
   }
 }
 
@@ -251,7 +329,7 @@ $blue-dark: #2c4062;
   opacity: 0;
 
   &.active {
-    animation: fadeIn 5s ease forwards;
+    animation: fadeIn 4s ease forwards;
   }
 }
 
@@ -298,6 +376,10 @@ $blue-dark: #2c4062;
   .hero-text p {
     font-size: clamp(0.95rem, 2.2vw, 1.1rem);
   }
+
+  .graph-container{
+    max-width: 400px;
+  }
 }
 
 @media (min-width: 900px) and (max-width: 1099px) {
@@ -327,6 +409,9 @@ $blue-dark: #2c4062;
     font-size: 1rem;
     padding: 0.7rem 2rem;
     text-align: center;
+  }
+  .graph-container{
+    max-width: 320px;
   }
 }
 
