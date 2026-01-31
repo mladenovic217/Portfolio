@@ -15,11 +15,8 @@ $blue-dark: #2c4062;
   justify-content: space-between;
   position: relative;
   //background: $bg-main;
-  background-image: 
-    linear-gradient(
-      rgba(0, 0, 0, 0.63),
-      rgba(0, 0, 0, 0.66)
-    ),
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.63), rgba(0, 0, 0, 0.66)),
     url("../../assets/43541.jpg");
 
   background-size: cover;
@@ -120,7 +117,6 @@ $blue-dark: #2c4062;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  
 
   .graph-container {
     width: 100%;
@@ -131,8 +127,8 @@ $blue-dark: #2c4062;
     justify-content: flex-end;
   }
 
-  .column-graph{
-    height: 150px; 
+  .column-graph {
+    height: 150px;
     opacity: 0;
     transform: translateY(10px);
     transition: all 0.3s ease;
@@ -154,13 +150,16 @@ $blue-dark: #2c4062;
       ul {
         list-style: none;
         display: grid;
-        grid-template-columns: 1fr 1fr; 
+        grid-template-columns: 1fr 1fr;
         gap: 8px;
-        
+
         li {
           color: $blue-light;
           font-size: 1.1rem;
-          &:before { content: "▹ "; color: $white; }
+          &:before {
+            content: "▹ ";
+            color: $white;
+          }
         }
       }
     }
@@ -182,12 +181,18 @@ $blue-dark: #2c4062;
       cursor: pointer;
       overflow: hidden;
 
-      &.bar-low { height: 40%; }
-      &.bar-med { height: 65%; }
-      &.bar-high { height: 90%; }
+      &.bar-low {
+        height: 40%;
+      }
+      &.bar-med {
+        height: 65%;
+      }
+      &.bar-high {
+        height: 90%;
+      }
 
-      
-      &.active, &:hover {
+      &.active,
+      &:hover {
         background: linear-gradient(180deg, $blue-light, $blue-dark);
         box-shadow: 0 0 30px rgba($blue-light, 0.2);
         height: 100% !important;
@@ -377,7 +382,7 @@ $blue-dark: #2c4062;
     font-size: clamp(0.95rem, 2.2vw, 1.1rem);
   }
 
-  .graph-container{
+  .graph-container {
     max-width: 400px;
   }
 }
@@ -410,7 +415,7 @@ $blue-dark: #2c4062;
     padding: 0.7rem 2rem;
     text-align: center;
   }
-  .graph-container{
+  .graph-container {
     max-width: 320px;
   }
 }
