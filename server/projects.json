@@ -4,19 +4,22 @@
       "id": 1,
       "title": "Ohmleta.si Website",
       "image": "/assets/Ohmleta.PNG",
-      "tech": "A simple yet elegant JS/HTML/CSS project that demonstrates responsive layout and client-side logic."
+      "tech": "Collaborative website project created for a Slovenian research institute, built with HTML, CSS, and JavaScript, emphasizing responsive layout and user-friendly design."
+
     },
     {
       "id": 2,
       "title": "Aurelia Website",
       "image": "/assets/Aurelia.PNG",
-      "tech": "A simple yet elegant JS/HTML/CSS project that demonstrates responsive layout and client-side logic."
+      "tech": "Personal concept project for a fictional restaurant, built with HTML, SCSS, and JavaScript as a responsive layout-focused learning project."
+
     },
     {
       "id": 3,
       "title": "Investment Calculator",
       "image": "/assets/InvestmentCalculator.PNG",
-      "tech": "A simple yet elegant JS/HTML/CSS project that demonstrates responsive layout and client-side logic."
+      "tech": "Investment calculator built as a React learning project, using Tailwind CSS for styling, focused on state management and component-based architecture."
+
     },
     {
       "id": 4,
@@ -28,19 +31,20 @@
       "id": 5,
       "title": "Ohmleta.si Website",
       "image": "/assets/TheOhmleta.PNG",
-      "tech": "A simple yet elegant JS/HTML/CSS project that demonstrates responsive layout and client-side logic."
+      "tech": "Experimental dark-themed landing page featuring a custom cursor that simulates a flashlight effect for interactive exploration."
+
     },
     {
       "id": 6,
       "title": "Aurelia Website",
       "image": "/assets/Aurelia.PNG",
-      "tech": "A simple yet elegant JS/HTML/CSS project that demonstrates responsive layout and client-side logic."
+      "tech": "Personal concept project for a fictional restaurant, built with HTML, SCSS, and JavaScript as a responsive layout-focused learning project."
     },
     {
       "id": 7,
       "title": "Investment Calculator",
       "image": "/assets/InvestmentCalculator.PNG",
-      "tech": "A simple yet elegant JS/HTML/CSS project that demonstrates responsive layout and client-side logic."
+      "tech": "Investment calculator built as a React learning project, using Tailwind CSS for styling, focused on state management and component-based architecture."
     }
   ]
 }

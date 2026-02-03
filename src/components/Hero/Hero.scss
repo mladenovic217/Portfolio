@@ -10,9 +10,11 @@ $blue-light: #7690bd;
 $blue-dark: #2c4062;
 
 .hero {
-  min-height: 100vh;
+  height: 100vh;
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  width: 100%;
   position: relative;
   //background: $bg-main;
   background-image:
@@ -21,7 +23,7 @@ $blue-dark: #2c4062;
 
   background-size: cover;
   background-position: center;
-  align-items: center;
+
   overflow-y: hidden;
 
   h1 {
@@ -87,7 +89,7 @@ $blue-dark: #2c4062;
   margin-top: 1.9rem;
   cursor: pointer;
 
-  &.primary {
+  &.left {
     background: $blue-dark;
     color: $white;
 
@@ -98,7 +100,7 @@ $blue-dark: #2c4062;
     }
   }
 
-  &.secondary {
+  &.right {
     border: 1px solid $blue-light;
     color: $white;
 
@@ -118,7 +120,7 @@ $blue-dark: #2c4062;
   justify-content: center;
   align-items: center;
 
-  .graph-container {
+  .graph-box {
     width: 100%;
     max-width: clamp(300px, 30vw, 500px);
     height: 600px;
@@ -127,7 +129,7 @@ $blue-dark: #2c4062;
     justify-content: flex-end;
   }
 
-  .column-graph {
+  .info-graph {
     height: 150px;
     opacity: 0;
     transform: translateY(10px);
@@ -141,7 +143,7 @@ $blue-dark: #2c4062;
       transform: translateY(0);
     }
 
-    .column-graph-text {
+    .info-graph-text {
       h3 {
         color: $white;
         margin-bottom: 10px;
@@ -165,7 +167,7 @@ $blue-dark: #2c4062;
     }
   }
 
-  .graph-info {
+  .chart {
     display: flex;
     align-items: flex-end;
     gap: clamp(8px, 1.5vw, 15px);
@@ -339,10 +341,6 @@ $blue-dark: #2c4062;
 }
 
 @media (min-width: 1300px) and (max-width: 1500px) {
-  #hero-img {
-    right: 0% !important;
-  }
-
   .hero-text {
     max-width: clamp(20rem, 45vw, 35rem);
   }
@@ -382,7 +380,7 @@ $blue-dark: #2c4062;
     font-size: clamp(0.95rem, 2.2vw, 1.1rem);
   }
 
-  .graph-container {
+  .graph-box {
     max-width: 400px;
   }
 }
@@ -415,7 +413,7 @@ $blue-dark: #2c4062;
     padding: 0.7rem 2rem;
     text-align: center;
   }
-  .graph-container {
+  .graph-box {
     max-width: 320px;
   }
 }
@@ -480,5 +478,61 @@ $blue-dark: #2c4062;
     font-size: 1rem;
     padding: 0.7rem 2rem;
     text-align: center;
+  }
+}
+
+@media (min-width: 2000px) {
+  .hero-text {
+    max-width: clamp(38rem, 45vw, 65rem);
+
+    h1 {
+      font-size: clamp(4.2rem, 5vw, 7rem);
+    }
+
+    h2 {
+      font-size: clamp(2.5rem, 3vw, 4rem);
+    }
+
+    p {
+      font-size: clamp(1.3rem, 1.5vw, 2rem);
+    }
+
+    .hero-buttons .btn {
+      width: clamp(200px, 15vw, 350px);
+      font-size: clamp(1.2rem, 1.5vw, 2rem);
+      padding: clamp(1rem, 1.2vw, 1.2rem) clamp(2rem, 2vw, 3.1rem);
+      text-align: center;
+    }
+  }
+
+  .graph {
+    .graph-box {
+      max-width: clamp(500px, 35vw, 700px);
+      height: clamp(600px, 55vh, 800px);
+    }
+
+    .info-graph {
+      width: clamp(400px, 40vw, 800px);
+      height: auto;
+      min-height: clamp(150px, 15vh, 200px);
+
+      .info-graph-text {
+        h3 {
+          font-size: clamp(1.5rem, 2vw, 2.4rem);
+        }
+        ul li {
+          font-size: clamp(1.1rem, 1.3vw, 1.7rem);
+        }
+      }
+    }
+
+    .chart {
+      height: clamp(400px, 40vh, 550px);
+      gap: clamp(15px, 2vw, 25px);
+
+      .bar-label {
+        font-size: clamp(1.5rem, 1.8vw, 2.2rem) !important;
+      }
+    }
   }
 }

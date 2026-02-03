@@ -1,8 +1,8 @@
 import "./Navbar.scss";
-import { useActiveSection } from "../../hooks/useActiveSection";
+import  useScrollTracking  from "../../hooks/useScrollTracking";
 
 export default function Navbar() {
-  const {active,isHero} = useActiveSection();
+  const { active, isHero } = useScrollTracking();
 
   return (
     <nav className={isHero ? "navbar navbar-hero" : "navbar"}>

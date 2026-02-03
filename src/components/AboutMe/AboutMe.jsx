@@ -3,21 +3,22 @@ import "./AboutMe.scss";
 export default function AboutMe() {
   return (
     <section id="about" className="about">
-      <div className="container">
+      <div className="about-box">
         <h1 className="active">About Me</h1>
         <div className="about-left">
-          <div className="about-item" data-animate="fadeUp">
+          <div className="school" data-animate="fadeUp">
             <h3>School</h3>
             <p>
-              I’m 21 years old and currently studying at the Faculty of Electronic Engineering in
-              Niš, majoring in Computer Science and Informatics (RI).
+              I’m 21 years old and currently studying at the Faculty of
+              Electronic Engineering in Niš, majoring in Computer Science and
+              Informatics (RI).
             </p>
             <p>
               I completed my high school education in the IT program, where I
               developed a strong foundation in programming and technology.
             </p>
           </div>
-          <div className="about-item" data-animate="fadeUp">
+          <div className="goals" data-animate="fadeUp">
             <h3>What I'm Looking For</h3>
             <p>
               I’m looking for opportunities to grow as a frontend developer,
@@ -26,26 +27,20 @@ export default function AboutMe() {
             </p>
           </div>
 
-          <div className="about-item" data-animate="fadeUp">
+          <div className="tech-skills" data-animate="fadeUp">
             <h3>My Skills</h3>
             <p>
-              I work mainly with JavaScript and React, and I’m also comfortable
+              I work mainly with <strong>JavaScript</strong> and <strong>React</strong>, and I’m also comfortable
               with:
             </p>
-            <ul className="skills-grid">
+            <ul className="skills">
               <li>
-                <img
-                  src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg"
-                  alt="React"
-                />
-                React
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" />
+                HTML
               </li>
               <li>
-                <img
-                  src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg"
-                  alt="JS"
-                />
-                JavaScript
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" />
+                CSS
               </li>
               <li>
                 <img
@@ -79,8 +74,8 @@ export default function AboutMe() {
           </div>
         </div>
 
-        <div className="about-right" data-animate="fadeRight">
-          <img src="/assets/MeImg.png"/>
+        <div className="about-right" data-animate="fadeIn">
+          <img src="/assets/MeImg.png" />
         </div>
       </div>
     </section>

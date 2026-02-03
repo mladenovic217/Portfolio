@@ -12,14 +12,15 @@ export default function ContactMe() {
     const object = Object.fromEntries(formData);
     const json = JSON.stringify(object);
 
-    const res = await fetch("https://api.web3forms.com/submit", {
-      method: "POST",
+    const response = await fetch("https://api.web3forms.com/submit",{
+      method: "Post",
       headers: {
         "Content-Type": "application/json",
         Accept: "application/json",
       },
       body: json,
-    }).then((res) => res.json());
+    });
+    const res = await response.json();
 
     if (res.success) {
       Swal.fire({
@@ -34,12 +35,12 @@ export default function ContactMe() {
 
   return (
     <section id="contact" className="contact">
-      <div className="contact-top">
+      <div className="c-top">
         <h1 data-animate="FadeIn">Let's work together!</h1>
       </div>
 
-      <div className="contact-bottom">
-        <div className="contact-left">
+      <div className="c-bot">
+        <div className="c-left">
           <h2 data-animate="fadeLeft">Reach me</h2>
           <p data-animate="fadeLeft">
             <strong>Email:</strong>
@@ -70,7 +71,7 @@ export default function ContactMe() {
             </span>
           </p>
 
-          <div className="contact-socials" data-animate="fadeLeft">
+          <div className="c-socials" data-animate="fadeLeft">
             <a href="https://www.linkedin.com/in/veljko-mladenovic-1866322a7/">
               <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linkedin/linkedin-original.svg" />
             </a>
@@ -83,9 +84,9 @@ export default function ContactMe() {
           </div>
         </div>
 
-        <div className="contact-right" data-animate="fadeRight">
+        <div className="c-right" data-animate="fadeRight">
           <h2>Contact me</h2>
-          <form className="contact-form" onSubmit={onSubmit}>
+          <form className="c-form" onSubmit={onSubmit}>
             <input type="text" placeholder="Full name" name="name" required />
             <input
               type="email"

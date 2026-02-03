@@ -27,7 +27,7 @@ $blue-dark: #2c4062;
     padding: 2rem 1.5rem;
   }
 }
-.container {
+.about-box {
   width: 95%;
   padding: 3rem;
   position: relative;
@@ -100,11 +100,11 @@ $blue-dark: #2c4062;
   color: #fff;
 
   @media (max-width: 1500px) {
-    max-width: clamp(0rem, 60%, 65%);
+    max-width: clamp(0rem, 50%, 65%);
   }
 
   @media (max-width: 1350px) {
-    max-width: clamp(0rem, 65%, 65%);
+    max-width: clamp(0rem, 50%, 55%);
   }
 
   @media (max-width: 1024px) {
@@ -114,9 +114,9 @@ $blue-dark: #2c4062;
 }
 
 .about-right {
-  position: absolute;
+  /*position: absolute;
   bottom: 0;
-  right: 0;
+  right: 0;*/
   width: 45%;
   height: 600px;
   display: flex;
@@ -130,24 +130,25 @@ $blue-dark: #2c4062;
     object-fit: cover;
     margin-bottom: 50%;
 
-    @media (max-width:1440px){
+    /*@media (max-width: 1440px) {
       width: 500px;
       height: 850px;
     }
 
-    @media (max-width: 1350px){
+    @media (max-width: 1350px) {
       height: 800px;
       transform: translateX(40px);
-    }
+    }*/
   }
-
 
   @media (max-width: 1024px) {
     display: none;
   }
 }
 
-.about-item {
+.school,
+.goals,
+.tech-skills {
   margin-top: 1rem;
   margin-bottom: clamp(2rem, 6vw, 3.75rem);
 
@@ -158,6 +159,10 @@ $blue-dark: #2c4062;
     text-align: justify;
   }
 
+  p strong {
+    color: $blue-light;
+  }
+
   h3 {
     font-size: clamp(1rem, 1.2vw, 1.7rem);
     font-weight: 500;
@@ -165,13 +170,17 @@ $blue-dark: #2c4062;
     color: $blue-light;
   }
 
-  ul.skills-grid {
+  ul.skills {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 1.5rem;
     list-style: none;
     padding: 0;
-    margin-top: 20px;
+    margin-top: 30px;
+
+    @media (max-width: 480px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
 
     li {
       display: flex;
@@ -190,11 +199,20 @@ $blue-dark: #2c4062;
         height: 25px;
         filter: grayscale(20%);
         transition: transform 0.3s ease;
+
+        @media (max-width: 480px) {
+          width: 20px;
+          height: 20px;
+        }
       }
 
       &:hover img {
         transform: scale(1.2);
         filter: grayscale(0%);
+      }
+
+      @media (max-width: 480px) {
+        font-size: 0.9rem;
       }
     }
   }
@@ -231,13 +249,16 @@ $blue-dark: #2c4062;
   opacity: 0;
 
   &.active {
-    animation: fadeIn 6s ease forwards;
+    animation: fadeIn 3s ease forwards;
   }
 }
 
 @keyframes fadeIn {
   0% {
     opacity: 0;
+  }
+  50% {
+    opacity: 0.5;
   }
   100% {
     opacity: 1;
@@ -274,5 +295,64 @@ $blue-dark: #2c4062;
   to {
     opacity: 1;
     transform: translateX(0);
+  }
+}
+
+@media (min-width: 2000px) {
+  .about {
+    padding: clamp(6rem, 8vh, 10rem) clamp(8rem, 10vw, 15rem);
+    min-height: 85vh;
+
+    .about-box {
+      max-width: 1900px;
+      padding: 3rem;
+
+      h1 {
+        font-size: clamp(4rem, 5vw, 5.5rem);
+        margin-bottom: 6rem;
+      }
+    }
+  }
+
+  .about-left {
+    max-width: 55%;
+  }
+
+  .school,.goals,.tech-skills {
+    margin-bottom: 5rem;
+
+    h3 {
+      font-size: 2.5rem;
+    }
+
+    p {
+      font-size: 1.6rem;
+      line-height: 1.7;
+    }
+
+    ul.skills {
+      gap: 3rem;
+      margin-top: 40px;
+
+      li {
+        font-size: 1.5rem;
+        gap: 15px;
+
+        img {
+          width: 45px;
+          height: 45px;
+        }
+      }
+    }
+  }
+
+  .about-right {
+    width: 40%;
+    height: 900px;
+
+    img {
+      width: 800px;
+      height: 1300px;
+    }
   }
 }

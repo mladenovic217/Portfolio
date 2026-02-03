@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "./Hero.scss";
-import useTypewriter from "../../hooks/useTypewriter";
+import useTypewriter from "../../hooks/useTypingEffect";
 
 export default function Hero() {
   const text = useTypewriter("Front-end Developer");
@@ -57,20 +57,20 @@ export default function Hero() {
         </p>
 
         <div className="hero-buttons">
-          <a className="btn primary" data-animate="FadeIn" href="#contact">
+          <a className="btn left" data-animate="FadeIn" href="#contact">
             Contact Me
           </a>
-          <a className="btn secondary" data-animate="FadeIn" href="#projects">
+          <a className="btn right" data-animate="FadeIn" href="#projects">
             Projects
           </a>
         </div>
       </div>
 
       <div className="graph" data-animate="FadeImg">
-        <div className="graph-container">
-          <div className={`column-graph ${activeText ? "visible" : ""}`}>
+        <div className="graph-box">
+          <div className={`info-graph ${activeText ? "visible" : ""}`}>
             {activeText && (
-              <div className="column-graph-text">
+              <div className="info-graph-text">
                 <h3>{activeText.label} Expertise</h3>
                 <ul>
                   {activeText.details.map((data, index) => (
@@ -81,7 +81,7 @@ export default function Hero() {
             )}
           </div>
 
-          <div className="graph-info">
+          <div className="chart">
             {skills.map((skill) => (
               <div
                 key={skill.id}

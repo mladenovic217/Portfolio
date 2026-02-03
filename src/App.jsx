@@ -5,15 +5,15 @@ import Navbar from "./components/Navbar/Navbar";
 import Projects from "./components/Projects/Projects";
 import AboutMe from "./components/AboutMe/AboutMe";
 
-import ScrollProgress from "./components/ScrollProgress";
-import useScrollAnimation from "./hooks/useScrollAnimation";
+import Scroll from "./components/Scroll";
+import useScrollReveal from "./hooks/useScrollReveal";
 import ContactMe from "./components/ContactMe/ContactMe";
 
 function App() {
-  useScrollAnimation();
+  useScrollReveal();
   return (
     <>
-      <ScrollProgress />
+      <Scroll />
       <Navbar></Navbar>
       <Hero></Hero>
       <Projects></Projects>

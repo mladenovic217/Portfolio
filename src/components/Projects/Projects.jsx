@@ -35,23 +35,23 @@ export default function Projects() {
 
   return (
     <section className="projects" id="projects">
-      <div className="projects-content">
+      <div className="pr-text">
         <span data-animate="fadeLeft">My Projects</span>
 
-        <h1 data-animate="fadeLeft" className="side-title" ref={titleRef}></h1>
+        <h1 data-animate="fadeLeft" className="pr-title" ref={titleRef}></h1>
 
         <hr data-animate="fadeLeft" />
 
-        <p data-animate="fadeLeft" className="side-tech" ref={techRef}></p>
+        <p data-animate="fadeLeft" className="pr-tech" ref={techRef}></p>
 
-        <a data-animate="fadeLeft" href="#" className="slider-btn side-btn">
+        <a data-animate="fadeLeft" href="#" className="github-btn">
           Go to GitHub
         </a>
       </div>
 
       {projects.length > 0 && (
         <Swiper
-          className="myswiper"
+          className="swiper"
           modules={[Pagination, EffectCoverflow, Autoplay]}
           effect={"coverflow"}
           grabCursor={true}
@@ -90,14 +90,15 @@ export default function Projects() {
           {projects.map((data) => (
             <SwiperSlide
               key={data.id}
-              className="myswiper-slider"
+              className="swiper-slider"
               style={{
                 backgroundImage: `url(${data.image})`,
+                
               }}
               data-title={data.title}
               data-tech={data.tech}
             >
-              <div className="slide-overlay"></div>
+              
             </SwiperSlide>
           ))}
         </Swiper>

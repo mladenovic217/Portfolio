@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-export function useActiveSection() {
+export default function useScrollTracking() {
   const [active, setActive] = useState("home");
   const [isHero, setIsHero] = useState(true);
 
