@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, EffectCoverflow, Autoplay } from "swiper/modules";
@@ -11,26 +11,31 @@ import "./Projects.scss";
 
 export default function Projects() {
   const [projects, setProjects] = useState([]);
+  const [info, setInfo] = useState({ title: "", tech: "", link: "#" });
+
   useEffect(() => {
     const fetchProjects = async () => {
       try {
         const res = await fetch("http://localhost:3000/projects");
         const data = await res.json();
         setProjects(data);
-      } catch (err) {
-        console.error(err);
+        if (data.length > 0) {
+          setInfo({
+            title: data[0].title,
+            tech: data[0].tech,
+            link: data[0].link,
+          });
+        }
+      } catch (errorrr) {
+        console.error(errorrr);
       }
     };
 
     fetchProjects();
   }, []);
 
-  const titleRef = useRef(null);
-  const techRef = useRef(null);
-
-  const setSideInfo = (title, tech) => {
-    if (titleRef.current) titleRef.current.setAttribute("data-title", title);
-    if (techRef.current) techRef.current.setAttribute("data-tech", tech);
+  const setSideInfo = (title, tech, link) => {
+    setInfo({ title, tech, link: link || "#" });
   };
 
   return (
@@ -38,13 +43,22 @@ export default function Projects() {
       <div className="pr-text">
         <span data-animate="fadeLeft">My Projects</span>
 
-        <h1 data-animate="fadeLeft" className="pr-title" ref={titleRef}></h1>
+        <h1 data-animate="fadeLeft" className="pr-title">
+          {info.title}
+        </h1>
 
         <hr data-animate="fadeLeft" />
 
-        <p data-animate="fadeLeft" className="pr-tech" ref={techRef}></p>
+        <p data-animate="fadeLeft" className="pr-tech">
+          {info.tech}
+        </p>
 
-        <a data-animate="fadeLeft" href="#" className="github-btn">
+        <a
+          href={info.link}
+          target="_blank"
+          data-animate="fadeLeft"
+          className="github-btn"
+        >
           Go to GitHub
         </a>
       </div>
@@ -73,12 +87,12 @@ export default function Projects() {
           onInit={(swiper) => {
             const project = projects[swiper.realIndex];
             if (!project) return;
-            setSideInfo(project.title, project.tech);
+            setSideInfo(project.title, project.tech, project.link);
           }}
           onSlideChange={(swiper) => {
             const project = projects[swiper.realIndex];
             if (!project) return;
-            setSideInfo(project.title, project.tech);
+            setSideInfo(project.title, project.tech, project.link);
           }}
           breakpoints={{
             0: { slidesPerView: 1 },
@@ -93,13 +107,10 @@ export default function Projects() {
               className="swiper-slider"
               style={{
                 backgroundImage: `url(${data.image})`,
-                
               }}
               data-title={data.title}
               data-tech={data.tech}
-            >
-              
-            </SwiperSlide>
+            ></SwiperSlide>
           ))}
         </Swiper>
       )}

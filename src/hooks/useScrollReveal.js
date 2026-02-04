@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 
-export default function useScrollAnimation(
+export default function useScrollReveal(
   selector = "[data-animate]",
   threshold = 0.3,
 ) {
