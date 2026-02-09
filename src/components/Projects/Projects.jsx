@@ -11,7 +11,7 @@ import "./Projects.scss";
 
 export default function Projects() {
   const [projects, setProjects] = useState([]);
-  const [info, setInfo] = useState({ title: "", tech: "", link: "#" });
+  const [info, setInfo] = useState({ title: "", tech: "", link: "#", btnText: ""});
 
   useEffect(() => {
     const fetchProjects = async () => {
@@ -24,6 +24,7 @@ export default function Projects() {
             title: data[0].title,
             tech: data[0].tech,
             link: data[0].link,
+            btnText: data[0].btnText
           });
         }
       } catch (errorrr) {
@@ -34,8 +35,8 @@ export default function Projects() {
     fetchProjects();
   }, []);
 
-  const setSideInfo = (title, tech, link) => {
-    setInfo({ title, tech, link: link || "#" });
+  const setSideInfo = (title, tech, link, btnText) => {
+    setInfo({ title, tech, link: link || "#", btnText});
   };
 
   return (
@@ -59,7 +60,7 @@ export default function Projects() {
           data-animate="fadeLeft"
           className="github-btn"
         >
-          Go to GitHub
+          {info.btnText}
         </a>
       </div>
 
@@ -87,12 +88,12 @@ export default function Projects() {
           onInit={(swiper) => {
             const project = projects[swiper.realIndex];
             if (!project) return;
-            setSideInfo(project.title, project.tech, project.link);
+            setSideInfo(project.title, project.tech, project.link, project.btnText);
           }}
           onSlideChange={(swiper) => {
             const project = projects[swiper.realIndex];
             if (!project) return;
-            setSideInfo(project.title, project.tech, project.link);
+            setSideInfo(project.title, project.tech, project.link, project.btnText);
           }}
           breakpoints={{
             0: { slidesPerView: 1 },

@@ -1,9 +1,9 @@
 .projects {
   position: relative;
   width: 100%;
+  min-height: 85vh;
   padding-left: 7%;
   padding-right: 7%;
-  min-height: 100vh;
   column-gap: 3rem;
   padding-block: min(20vh, 3rem);
 }
@@ -53,6 +53,7 @@
 
 .pr-text {
   width: 45%;
+  
 }
 
 .pr-text h1::after {
@@ -163,6 +164,7 @@
     flex-direction: column;
     padding-top: 5rem;
     gap: 2rem;
+    min-height: 100vh;
   }
 
   .pr-text {

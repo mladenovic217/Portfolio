@@ -5,42 +5,56 @@
       "title": "Ohmleta.si Website",
       "image": "/assets/Ohmleta.PNG",
       "tech": "Collaborative website project created for a Slovenian research institute, built with HTML, CSS, and JavaScript, emphasizing responsive layout and user-friendly design.",
-      "link": "https://www.ohmleta.si/"
+      "link": "https://www.ohmleta.si/",
+      "btnText" : "Visit website"
     },
     {
       "id": 2,
       "title": "Aurelia Website",
       "image": "/assets/Aurelia.PNG",
       "tech": "Personal concept project for a fictional restaurant, built with HTML, SCSS, and JavaScript as a responsive layout-focused learning project.",
-      "link": "https://www.ohmleta.si/"
+      "link": "https://github.com/mladenovic217/Projects/tree/main",
+      "btnText" : "Go to GitHub"
     },
     {
       "id": 3,
       "title": "Investment Calculator",
       "image": "/assets/InvestmentCalculator.PNG",
       "tech": "Investment calculator built as a React learning project, using Tailwind CSS for styling, focused on state management and component-based architecture.",
-      "link": "https://www.ohmleta.si/"
+      "link": "https://github.com/mladenovic217/Projects/tree/main",
+      "btnText" : "Go to GitHub"
     },
     {
       "id": 4,
       "title": "Weather App",
       "image": "/assets/Weather.PNG",
       "tech": "Simple weather app built with JavaScript, demonstrating API fetching and asynchronous logic.",
-      "link": "https://www.ohmleta.si/"
+      "link": "https://github.com/mladenovic217/Projects/tree/main",
+      "btnText" : "Go to GitHub"
     },
     {
       "id": 5,
       "title": "Ohmleta.si Website",
       "image": "/assets/Ohmleta.PNG",
       "tech": "Collaborative website project created for a Slovenian research institute, built with HTML, CSS, and JavaScript, emphasizing responsive layout and user-friendly design.",
-      "link": "https://www.ohmleta.si/"
+      "link": "https://www.ohmleta.si/",
+      "btnText" : "Visit website"
     },
     {
       "id": 6,
       "title": "Investment Calculator",
       "image": "/assets/InvestmentCalculator.PNG",
       "tech": "Investment calculator built as a React learning project, using Tailwind CSS for styling, focused on state management and component-based architecture.",
-      "link": "https://www.ohmleta.si/"
+      "link": "https://github.com/mladenovic217/Projects/tree/main",
+      "btnText" : "Go to GitHub"
+    },
+     {
+      "id": 7,
+      "title": "Weather App",
+      "image": "/assets/Weather.PNG",
+      "tech": "Simple weather app built with JavaScript, demonstrating API fetching and asynchronous logic.",
+      "link": "https://github.com/mladenovic217/Projects/tree/main",
+      "btnText" : "Go to GitHub"
     }
   ]
 }
