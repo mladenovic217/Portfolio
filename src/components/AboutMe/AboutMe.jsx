@@ -75,7 +75,7 @@ export default function AboutMe() {
         </div>
 
         <div className="about-right" data-animate="fadeIn">
-          <img src="/assets/MeImg.png" />
+          <img src="/assets/profile-pic.png" />
         </div>
       </div>
     </section>

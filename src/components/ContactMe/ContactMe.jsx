@@ -59,7 +59,7 @@ export default function ContactMe() {
             <strong>You can also reach me on:</strong>{" "}
             <span id="contact-span">
               <a
-                href="https://www.linkedin.com/in/veljko-mladenovic-1866322a7/"
+                href="https://www.linkedin.com/in/veljko-mladenovic-1169193a9/"
                 target="_blank"
               >
                 LinkedIn

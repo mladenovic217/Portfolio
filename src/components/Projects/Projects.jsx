@@ -16,7 +16,7 @@ export default function Projects() {
   useEffect(() => {
     const fetchProjects = async () => {
       try {
-        const res = await fetch("http://localhost:3000/projects");
+        const res = await fetch("https://699eebd878dda56d396bd5b5.mockapi.io/api/v1/projects");
         const data = await res.json();
         setProjects(data);
         if (data.length > 0) {

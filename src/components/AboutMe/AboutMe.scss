@@ -125,25 +125,24 @@ $blue-dark: #2c4062;
   overflow: hidden;
 
   img {
-    width: 600px;
-    height: 1000px;
+    width: 400px;
+    height: 400px;
     object-fit: cover;
-    margin-bottom: 50%;
 
-    /*@media (max-width: 1440px) {
-      width: 500px;
-      height: 850px;
+    @media (max-width: 1440px) {
+      width: 340px;
+      height: 340px;
     }
 
-    @media (max-width: 1350px) {
-      height: 800px;
-      transform: translateX(40px);
-    }*/
+    @media (max-width: 1240px) {
+      width: 300px;
+      height: 300px;
+    }
   }
 
-  @media (max-width: 1024px) {
-    display: none;
-  }
+   @media (max-width: 1024px) {
+      display: none;;
+    }
 }
 
 .school,
@@ -318,7 +317,9 @@ $blue-dark: #2c4062;
     max-width: 55%;
   }
 
-  .school,.goals,.tech-skills {
+  .school,
+  .goals,
+  .tech-skills {
     margin-bottom: 5rem;
 
     h3 {
@@ -351,8 +352,8 @@ $blue-dark: #2c4062;
     height: 900px;
 
     img {
-      width: 800px;
-      height: 1300px;
+      width: 550px;
+      height: 550px;
     }
   }
 }
